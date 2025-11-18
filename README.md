@@ -1,0 +1,7 @@
+# Chai aur React Learning Projects
+
+This repo contains the projects I made while learning ReactJS from the Chai aur React playlist on the YouTube channel Chai aur Code
+
+PlayList : https://www.youtube.com/playlist?list=PLu71SKxNbfoDqgPchmvIsL4hTnJIrtige
+
+Will update experience later
