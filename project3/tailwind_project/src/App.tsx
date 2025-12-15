@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import './App.css'
 import Card1 from './components/Card1'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
