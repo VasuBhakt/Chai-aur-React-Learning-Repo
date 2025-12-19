@@ -1,10 +1,20 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 
 function App() {
   const [length, setLength] = useState(5)
   const [numAllowed, setNumAllowed] = useState(false)
   const [charAllowed, setCharAllowed] = useState(false)
   const [password, setPassword] = useState("0000")
+  const [showToast, setShowToast] = useState(false)
+
+  const passwordRef = useRef<HTMLInputElement>(null);
+
+  const copyPasswordToClipboard = useCallback(() => {
+    //passwordRef.current?.select();
+    window.navigator.clipboard.writeText(password);
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2000);
+  }, [password]);
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
@@ -33,8 +43,11 @@ function App() {
             className='outline-none w-full py-2 px-3 '
             placeholder='password'
             readOnly
+            ref={passwordRef}
           />
-          <button className='outline-none bg-blue-700 text-white px-3 py-0.5'>copy</button>
+          <button
+            onClick={copyPasswordToClipboard}
+            className='outline-none bg-blue-700 text-white px-3 py-2 shrink-0 hover:bg-blue-500'>copy</button>
         </div>
         <div className='flex text-sm gap-x-2'>
           <div className='flex items-center gap-x-1'>
@@ -70,6 +83,13 @@ function App() {
           <label>Character allowed</label>
         </div>
       </div>
+      {showToast && (
+        <div className="flex justify-center mt-4">
+          <div className="bg-gray-700 text-white px-4 py-2 rounded-lg shadow-lg">
+            Successfully copied to clipboard!
+          </div>
+        </div>
+      )}
     </>
   )
 }
