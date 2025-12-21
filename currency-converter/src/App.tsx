@@ -35,9 +35,9 @@ function App() {
     >
       <div
         className='hidden md:flex w-1/3 h-full items-center justify-center bg-blue-950'>
-        <div className='items-center justify-center text-4xl text-yellow-500' style={{ fontFamily: 'Roboto', textAlign: 'center' }}>
+        <div className='text-4xl text-yellow-500' style={{ fontFamily: 'Roboto', textAlign: 'center' }}>
           Currency Converter
-          <div className='items-center justify-center text-2xl text-yellow-300 my-3' style={{ textAlign: 'center' }}>
+          <div className='text-2xl text-yellow-300 mt-3' style={{ textAlign: 'center' }}>
             Convert your currency!
           </div>
         </div>
