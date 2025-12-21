@@ -28,12 +28,21 @@ function App() {
 
   return (
     <div
-      className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
+      className="w-full h-screen flex flex-wrap  items-center bg-cover bg-no-repeat"
       style={{
         backgroundImage: `url('${BG_URL}')`,
       }}
     >
-      <div className="w-full">
+      <div
+        className='hidden md:flex w-1/3 h-full items-center justify-center bg-blue-950'>
+        <div className='items-center justify-center text-4xl text-yellow-500' style={{ fontFamily: 'Roboto', textAlign: 'center' }}>
+          Currency Converter
+          <div className='items-center justify-center text-2xl text-yellow-300 my-3' style={{ textAlign: 'center' }}>
+            Convert your currency!
+          </div>
+        </div>
+      </div>
+      <div className="w-full md:w-2/3 flex justify-center items-center">
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
           <form
             onSubmit={(e) => {
